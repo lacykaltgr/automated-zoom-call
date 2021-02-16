@@ -18,12 +18,12 @@ var db = {
       };
 var timetable = {
             1: ["töri", "matek", "angol", "német", "magyar", "ofõ", "biosz"],
-            2: [null, "angol", "matek", null, "magyar", "matek", "fizika", "fizika"],
-            3: ["média", "töri", "német", "angol", null, "fizika", "fizika"],
+            2: [false, "angol", "matek", false, "magyar", "matek", "fizika", "fizika"],
+            3: ["média", "töri", "német", "angol", false, "fizika", "fizika"],
             4: ["magyar", "magyar", "matek", "matek", "töri", "angol"],
             5: ["magyar", "biosz", "töri", "fizika", "matek", "német, matek"],
-            6: [null],
-            7: [null],
+            6: [false],
+            7: [false],
           };
 var orak = {
   0: [755, 850],
@@ -38,9 +38,13 @@ var orak = {
 var h = new Date().getHours();
 var m = new Date().getMinutes();
 var now = 100*h+m;
-let subject = new Zoom(milyen(now))
 
-document.getElementById("info").innerHTML = subject.subject
+if (milyen(now)){
+  let subject = new Zoom(milyen(now));
+  document.getElementById("info").innerHTML = subject.subject;
+};
+else {
+  document.getElementById("info").innerHTML = "most nincs semmilyen óra"
 
 
 function milyen(t) {
@@ -56,6 +60,5 @@ function milyen(t) {
 };
 
 function meeting(subject){
-  console.log("csá");
   window.location=subject.link
 };
