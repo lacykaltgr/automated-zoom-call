@@ -42,9 +42,9 @@ var now = 100*h+m;
 if (milyen(now)){
   let subject = new Zoom(milyen(now));
   document.getElementById("info").innerHTML = subject.subject;
-};
-else {
+} else {
   document.getElementById("info").innerHTML = "most nincs semmilyen óra"
+}
 
 
 function milyen(t) {
