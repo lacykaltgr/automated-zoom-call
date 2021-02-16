@@ -39,7 +39,7 @@ var h = new Date().getHours();
 var m = new Date().getMinutes();
 var now = 100*h+m;
 
-if (milyen(now)){
+if (milyen(now)) {
   let subject = new Zoom(milyen(now));
   document.getElementById("info").innerHTML = subject.subject;
 } else {
