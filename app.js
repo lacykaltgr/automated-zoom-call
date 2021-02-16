@@ -44,7 +44,7 @@ if (milyen(now)){
   document.getElementById("info").innerHTML = subject.subject;
 } else {
   document.getElementById("info").innerHTML = "most nincs semmilyen óra"
-}
+};
 
 
 function milyen(t) {
