@@ -40,6 +40,7 @@ var m = new Date().getMinutes();
 var now = 100*h+m;
 
 if (milyen(now)) {
+  console.log("cső")
   let subject = new Zoom(milyen(now));
   document.getElementById("info").innerHTML = subject.subject;
 } else {
