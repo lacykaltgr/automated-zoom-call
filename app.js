@@ -60,5 +60,9 @@ function milyen(t) {
 };
 
 function meeting(subject){
+  if (subject) {
   window.location=subject.link
+  } else {
+    document.getElementById("info").innerHTML = "mondom nincs óra, nem lehet belépni"
+  }
 };
